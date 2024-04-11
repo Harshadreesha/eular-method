@@ -1,0 +1,10 @@
+function [y0]=eular(x0,y0,h,yest,f)
+    n=(yest-x0)/n;
+    for i=1:n
+        y0=y0+f(x0,y0)*h;
+        x0=x0+h;
+    end
+endfunction
+deff('[y]=f(x,y)','y=y-x*y+x');
+z=eular(0,1,0.2,1,f)
+printf("ans is %f",2 );
